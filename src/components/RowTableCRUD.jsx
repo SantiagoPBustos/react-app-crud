@@ -1,7 +1,7 @@
 import React from 'react';
 
-function RowTableCRUD({el}) {
-    return ( 
+function RowTableCRUD({ el }) {
+    return (
         <tr>
             <td>{el.id}</td>
             <td>{el.Nombre}</td>

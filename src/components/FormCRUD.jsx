@@ -21,31 +21,29 @@ const FormCRUD = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="m-auto w-50" controlId="formBasicEmail">
+      <h3 className='mt-4'>Create Animal</h3>
+      <Form.Group className="m-auto w-75" controlId="formBasicEmail">
+        <Form.Control
+          name="nameAnimal"
+          className="mb-3"
+          type="text"
+          placeholder="Name animal"
+          onChange={handleChange}
+          value={Form.nameAnimal} />
 
-        <Form.Control 
-        name="nameAnimal" 
-        className="mb-3" 
-        type="text" 
-        placeholder="Name animal" 
-        onChange={handleChange} 
-        value={Form.nameAnimal} />
-
-        <Form.Control 
-        name="typeAnimal" 
-        className="mb-3" 
-        type="text" 
-        placeholder="Type animal" 
-        onChange={handleChange} 
-        value={Form.nameAnimal} />
+        <Form.Control
+          name="typeAnimal"
+          className="mb-3"
+          type="text"
+          placeholder="Type animal"
+          onChange={handleChange}
+          value={Form.nameAnimal} />
 
         <Stack gap={2} className="col-md-5 mx-auto">
           <Button variant="dark" type="submit">Submit</Button>
           <Button variant="dark" type="reset" onClick={handleReset}>Clean</Button>
         </Stack>
-
       </Form.Group>
-
     </Form>
   );
 }
