@@ -1,7 +1,8 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table'
+import RowTableCRUD from './RowTableCRUD';
 
-function TableCRUD() {
+function TableCRUD({data}) {
     return (
         <Table variant="dark" className="m-auto w-50 mt-5" striped bordered hover>
             <thead>
@@ -12,11 +13,7 @@ function TableCRUD() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Gato</td>
-                    <td>Michigan</td>
-                </tr>
+                {data.map((el) => <RowTableCRUD key={el.id} el={el}/>)}
             </tbody>
         </Table>
 

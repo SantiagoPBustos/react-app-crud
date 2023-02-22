@@ -11,7 +11,7 @@ const initialForm = {
 }
 
 const FormCRUD = () => {
-  const [form, setForm] = useState({ initialForm });
+  const [form, setForm] = useState(initialForm);
 
   const handleChange = () => { }
 

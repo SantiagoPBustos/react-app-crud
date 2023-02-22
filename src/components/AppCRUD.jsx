@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FormCRUD from './FormCRUD';
 import TableCRUD from './TableCRUD';
 
 const intialDB = [
     {
         "id": 1,
-        "Tipo": "Gato",
+        "Tipo": "Perro",
         "Nombre": "Icaro",
     }, 
     {
@@ -21,17 +21,19 @@ const intialDB = [
     },
     {
         "id": 4,
-        "Tipo": "Gato",
+        "Tipo": "Camello",
         "Nombre": "Tobias",
     },
     ]
 
-function AppCRUD() {
+const AppCRUD = () => {
+    const [data, setData] = useState(intialDB);
+
     return ( 
         <>
             <h3>Application CRUD whit React JS</h3>
             <FormCRUD/>
-            <TableCRUD/>
+            <TableCRUD data={data}/>
         </>
      );
 }
