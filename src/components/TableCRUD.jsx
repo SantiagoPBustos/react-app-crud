@@ -12,6 +12,8 @@ function TableCRUD({ data }) {
                         <th>ID</th>
                         <th>Tipo</th>
                         <th>Nombre</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
                     </tr>
                 </thead>
                 <tbody>
