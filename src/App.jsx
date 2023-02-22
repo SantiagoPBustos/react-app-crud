@@ -1,13 +1,15 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AppCRUD from './components/AppCRUD';
 
 function App() {
 
   return (
-    <div className="App">
-      <h1 className='text-center mt-5'>Estamos trabajando en el proyecto...</h1>
-    </div>
-  )
+    <>
+      <h3>Application CRUD whit React JS</h3>
+      <AppCRUD/>
+    </>  
+    )
 }
 
 export default App
