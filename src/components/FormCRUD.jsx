@@ -12,7 +12,7 @@ const FormCRUD = () => {
 
         <Stack gap={2} className="col-md-5 mx-auto">
             <Button variant="dark" type="submit">Submit</Button>        
-            <Button variant="dark" type="reset">Clean Form</Button>
+            <Button variant="dark" type="reset">Clean</Button>
         </Stack>
 
       </Form.Group>
