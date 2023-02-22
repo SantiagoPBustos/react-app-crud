@@ -28,7 +28,9 @@ function AppCRUD() {
 
     return ( 
         <>
+            <h3>Application CRUD whit React JS</h3>
             <FormCRUD/>
+            <table></table>
         </>
      );
 }

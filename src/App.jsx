@@ -6,7 +6,6 @@ function App() {
 
   return (
     <>
-      <h3>Application CRUD whit React JS</h3>
       <AppCRUD/>
     </>  
     )
