@@ -32,11 +32,15 @@ const intialDB = [
 const AppCRUD = () => {
     const [data, setData] = useState(intialDB);
 
+    const createData = (data) => {}
+    const updateData = (data) => {}
+    const deleteData = (id) => {}
+
     return (
         <>
             <Container>
                 <Row><h3>Application CRUD whit React JS</h3>
-
+                
                 </Row>
                 <Row>
                     <Col><FormCRUD /></Col>
