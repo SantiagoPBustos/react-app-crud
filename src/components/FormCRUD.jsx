@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 
-const initialForm = {
+const initialForm={
   id: null,
   Tipo: "",
   Nombre: "",
