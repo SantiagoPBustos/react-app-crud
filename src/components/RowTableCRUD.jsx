@@ -2,7 +2,9 @@ import React from 'react';
 import editLogo from '../assets/edit.png';
 import deleteLogo from '../assets/delete.png';
 
-function RowTableCRUD({ el }) {
+function RowTableCRUD({ el , setDataToEdit, deleteData}) {
+    let { nameAnimal, typeAnimal, id } = el;
+
     const buttonStyle = {
         width:"50%", 
         backgroundColor:"#212529",
@@ -16,9 +18,9 @@ function RowTableCRUD({ el }) {
 
     return (
         <tr>
-            <td>{el.nameAnimal}</td>
-            <td>{el.typeAnimal}</td>
-            <td><button style={buttonStyle}><img style={imgStyle} src={editLogo}/></button></td>
+            <td>{nameAnimal}</td>
+            <td>{typeAnimal}</td>
+            <td><button onClick={()=> setDataToEdit} style={buttonStyle}><img style={imgStyle} src={editLogo}/></button></td>
             <td><button style={buttonStyle}><img style={imgStyle} src={deleteLogo}/></button></td>
         </tr>
     );
