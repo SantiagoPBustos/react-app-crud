@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Stack from 'react-bootstrap/Stack';
-
-const initialForm={
-  id: null,
-  typeAnimal: "",
+const initialForm = {
   nameAnimal: "",
-}
+  typeAnimal: "",
+  id: null,
+};
 
-const FormCRUD = ({createData, updateData, dataToEdit, setDataToEdit}) => {
+const FormCRUD = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -28,56 +24,51 @@ const FormCRUD = ({createData, updateData, dataToEdit, setDataToEdit}) => {
     });
   };
 
-  const handleSubmit = (e) => { 
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!form.nameAnimal || !form.typeAnimal) {
-      alert("Datos Incompletos!");
+      alert("Datos incompletos");
       return;
     }
 
     if (form.id === null) {
       createData(form);
-    }else{
+    } else {
       updateData(form);
     }
 
     handleReset();
-
   };
 
-  const handleReset = () => { 
+  const handleReset = (e) => {
     setForm(initialForm);
     setDataToEdit(null);
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h3 className='mt-4'>Create Animal</h3>
-      <Form.Group className="m-auto w-75" controlId="formBasicEmail">
-        <Form.Control
+    <div>
+      <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
           name="nameAnimal"
-          className="mb-3"
-          type="text"
-          placeholder="Name animal"
+          placeholder="Nombre"
           onChange={handleChange}
-          value={Form.nameAnimal} />
-
-        <Form.Control
+          value={form.nameAnimal}
+        />
+        <input
+          type="text"
           name="typeAnimal"
-          className="mb-3"
-          type="text"
-          placeholder="Type animal"
+          placeholder="Tipo"
           onChange={handleChange}
-          value={Form.nameAnimal} />
-
-        <Stack gap={2} className="col-md-5 mx-auto">
-          <Button variant="dark" type="submit">Submit</Button>
-          <Button variant="dark" type="reset" onClick={handleReset}>Clean</Button>
-        </Stack>
-      </Form.Group>
-    </Form>
+          value={form.typeAnimal}
+        />
+        <div><input type="submit" value="Enviar" /></div>
+        <div><input type="reset" value="Limpiar" onClick={handleReset} /></div>
+      </form>
+    </div>
   );
-}
+};
 
 export default FormCRUD;

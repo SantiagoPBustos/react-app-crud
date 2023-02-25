@@ -20,7 +20,7 @@ const intialDB = [
     {
         "id": 3,
         "typeAnimal": "Gato",
-        "nameAnimal": "Sas",
+        "nameAnimal": "Michigan",
     },
     {
         "id": 4,
