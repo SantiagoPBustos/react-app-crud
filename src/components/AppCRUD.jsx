@@ -35,10 +35,13 @@ const AppCRUD = () => {
 
     const createData = (data) => {
         data.id = Date.now();
-        setDataBase([...dataBase,data]);
+        setDataBase([...dataBase, data]);
     }
-    const updateData = (data) => {}
-    const deleteData = (id) => {}
+    const updateData = (data) => {
+        let dataUpdated = dataBase.map((el) => (el.id === data.id ? data : el));
+        setDataBase(dataUpdated);
+    }
+    const deleteData = (id) => { }
 
     return (
         <>
@@ -47,17 +50,17 @@ const AppCRUD = () => {
 
                 </Row>
                 <Row>
-                    <Col><FormCRUD 
-                    createData={createData}
-                    updateData={updateData}
-                    dataToEdit={dataToEdit}
-                    setDataToEdit={setDataToEdit}                     
+                    <Col><FormCRUD
+                        createData={createData}
+                        updateData={updateData}
+                        dataToEdit={dataToEdit}
+                        setDataToEdit={setDataToEdit}
                     /></Col>
 
-                    <Col xs={7}><TableCRUD 
-                    data={dataBase} 
-                    setDataToEdit={setDataToEdit}   
-                    deleteData={deleteData}/></Col>
+                    <Col xs={7}><TableCRUD
+                        data={dataBase}
+                        setDataToEdit={setDataToEdit}
+                        deleteData={deleteData} /></Col>
                 </Row>
             </Container>
         </>
