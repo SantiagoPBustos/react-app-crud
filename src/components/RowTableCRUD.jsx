@@ -20,8 +20,8 @@ function RowTableCRUD({ el , setDataToEdit, deleteData}) {
         <tr>
             <td>{nameAnimal}</td>
             <td>{typeAnimal}</td>
-            <td><button onClick={()=> setDataToEdit} style={buttonStyle}><img style={imgStyle} src={editLogo}/></button></td>
-            <td><button style={buttonStyle}><img style={imgStyle} src={deleteLogo}/></button></td>
+            <td><button onClick={()=> setDataToEdit(el)} style={buttonStyle}><img style={imgStyle} src={editLogo}/></button></td>
+            <td><button onClick={()=> deleteData(el)} style={buttonStyle}><img style={imgStyle} src={deleteLogo}/></button></td>
         </tr>
     );
 }
