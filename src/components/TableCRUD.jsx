@@ -9,7 +9,6 @@ function TableCRUD({ data }) {
             <Table variant="dark" className="m-auto" striped bordered hover>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Tipo</th>
                         <th>Nombre</th>
                         <th>Editar</th>

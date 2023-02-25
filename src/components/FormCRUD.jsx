@@ -6,18 +6,42 @@ import Stack from 'react-bootstrap/Stack';
 
 const initialForm={
   id: null,
-  Tipo: "",
-  Nombre: "",
+  typeAnimal: "",
+  nameAnimal: "",
 }
 
-const FormCRUD = () => {
+const FormCRUD = ({createData, updateData, dataToEdit, setDataToEdit}) => {
   const [form, setForm] = useState(initialForm);
 
-  const handleChange = () => { }
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const handleSubmit = () => { }
+  const handleSubmit = (e) => { 
+    e.preventDefault();
 
-  const handleReset = () => { }
+    if (!form.nameAnimal || !form.typeAnimal) {
+      alert("Datos Incompletos!");
+      return;
+    }
+
+    if (form.id === null) {
+      createData(form);
+    }else{
+      updateData(form);
+    }
+
+    handleReset();
+
+  };
+
+  const handleReset = () => { 
+    setForm(initialForm);
+    setDataToEdit(null);
+  };
 
   return (
     <Form onSubmit={handleSubmit}>

@@ -14,13 +14,10 @@ function RowTableCRUD({ el }) {
         padding: "0px",
     }
 
-    https://cdn3.iconfinder.com/data/icons/feather-5/24/x-octagon-256.png
-
     return (
         <tr>
-            <td >{el.id}</td>
-            <td>{el.Nombre}</td>
-            <td>{el.Tipo}</td>
+            <td>{el.nameAnimal}</td>
+            <td>{el.typeAnimal}</td>
             <td><button style={buttonStyle}><img style={imgStyle} src={editLogo}/></button></td>
             <td><button style={buttonStyle}><img style={imgStyle} src={deleteLogo}/></button></td>
         </tr>

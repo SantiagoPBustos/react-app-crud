@@ -8,32 +8,35 @@ import Col from 'react-bootstrap/esm/Col';
 const intialDB = [
     {
         "id": 1,
-        "Tipo": "Perro",
-        "Nombre": "Icaro",
+        "typeAnimal": "Perro",
+        "nameAnimal": "Icaro",
     },
     {
         "id": 2,
-        "Tipo": "Pajaro",
-        "Nombre": "Cantor",
+        "typeAnimal": "Pajaro",
+        "nameAnimal": "Cantor",
 
     },
     {
         "id": 3,
-        "Tipo": "Gato",
-        "Nombre": "Sas",
+        "typeAnimal": "Gato",
+        "nameAnimal": "Sas",
     },
     {
         "id": 4,
-        "Tipo": "Camello",
-        "Nombre": "Tobias",
+        "typeAnimal": "Camello",
+        "nameAnimal": "Tobias",
     },
 ]
 
 const AppCRUD = () => {
-    const [data, setData] = useState(intialDB);
+    const [dataBase, setDataBase] = useState(intialDB);
     const [dataToEdit, setDataToEdit] = useState(null);
 
-    const createData = (data) => {}
+    const createData = (data) => {
+        data.id = Date.now();
+        setDataBase([...dataBase,data]);
+    }
     const updateData = (data) => {}
     const deleteData = (id) => {}
 
@@ -44,8 +47,17 @@ const AppCRUD = () => {
 
                 </Row>
                 <Row>
-                    <Col><FormCRUD /></Col>
-                    <Col><TableCRUD data={data} /></Col>
+                    <Col><FormCRUD 
+                    createData={createData}
+                    updateData={updateData}
+                    dataToEdit={dataToEdit}
+                    setDataToEdit={setDataToEdit}                     
+                    /></Col>
+
+                    <Col><TableCRUD 
+                    data={dataBase} 
+                    setDataToEdit={setDataToEdit}   
+                    deleteData={deleteData}/></Col>
                 </Row>
             </Container>
         </>
