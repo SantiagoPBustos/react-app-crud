@@ -47,10 +47,12 @@ const FormCRUD = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   };
 
   return (
-    <div>
+
+    <div className="mt-4">
       <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
       <form onSubmit={handleSubmit}>
         <input
+          className="mt-3 p-1"
           type="text"
           name="nameAnimal"
           placeholder="Nombre"
@@ -58,16 +60,21 @@ const FormCRUD = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.nameAnimal}
         />
         <input
+          className="mt-3 p-1"
           type="text"
           name="typeAnimal"
           placeholder="Tipo"
           onChange={handleChange}
           value={form.typeAnimal}
         />
-        <div><input type="submit" value="Enviar" /></div>
-        <div><input type="reset" value="Limpiar" onClick={handleReset} /></div>
+        <div>
+          <input className="mt-3 btn btn-dark" type="submit" value="Enviar" />
+        </div>
+          <input className="mt-3 btn btn-dark" type="reset" value="Limpiar" onClick={handleReset} />
+
       </form>
     </div>
+
   );
 };
 
