@@ -41,7 +41,16 @@ const AppCRUD = () => {
         let dataUpdated = dataBase.map((el) => (el.id === data.id ? data : el));
         setDataBase(dataUpdated);
     }
-    const deleteData = (id) => { }
+    const deleteData = (id) => { 
+        let isDelete = confirm(`Sure that u want delete this data whit id ${id}?`);
+
+        if (isDelete) {
+            let newData = dataBase.filter(el => el.id !== id);
+            setDataBase(newData);
+        }else{
+            return;
+        }
+    }
 
     return (
         <>
