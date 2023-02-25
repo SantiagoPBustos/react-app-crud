@@ -42,7 +42,7 @@ const AppCRUD = () => {
 
     return (
         <>
-            <Container>
+            <Container className='m-auto'>
                 <Row><h3>Application CRUD whit React JS</h3>
 
                 </Row>
@@ -54,7 +54,7 @@ const AppCRUD = () => {
                     setDataToEdit={setDataToEdit}                     
                     /></Col>
 
-                    <Col><TableCRUD 
+                    <Col xs={7}><TableCRUD 
                     data={dataBase} 
                     setDataToEdit={setDataToEdit}   
                     deleteData={deleteData}/></Col>
