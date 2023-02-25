@@ -3,8 +3,6 @@ import editLogo from '../assets/edit.png';
 import deleteLogo from '../assets/delete.png';
 
 function RowTableCRUD({ el , setDataToEdit, deleteData}) {
-    let { nameAnimal, typeAnimal, id } = el;
-
     const buttonStyle = {
         width:"50%", 
         backgroundColor:"#212529",
@@ -15,6 +13,8 @@ function RowTableCRUD({ el , setDataToEdit, deleteData}) {
         width:"25px", 
         padding: "0px",
     }
+
+    let { nameAnimal, typeAnimal, id } = el;
 
     return (
         <tr>
