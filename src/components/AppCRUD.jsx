@@ -31,6 +31,7 @@ const intialDB = [
 
 const AppCRUD = () => {
     const [data, setData] = useState(intialDB);
+    const [dataToEdit, setDataToEdit] = useState(null);
 
     const createData = (data) => {}
     const updateData = (data) => {}
@@ -40,7 +41,7 @@ const AppCRUD = () => {
         <>
             <Container>
                 <Row><h3>Application CRUD whit React JS</h3>
-                
+
                 </Row>
                 <Row>
                     <Col><FormCRUD /></Col>
